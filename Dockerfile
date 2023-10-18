@@ -9,7 +9,7 @@ RUN update-ca-certificates
 
 WORKDIR /src
 COPY . .
-RUN go build -ldflags="-X main.version=${BIN_VERSION}" -o ./out/${BIN_NAME} .
+RUN CGO_ENABLED=0 go build -ldflags="-X main.version=${BIN_VERSION}" -o ./out/${BIN_NAME} .
 
 FROM scratch
 ARG BIN_NAME
