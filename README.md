@@ -90,6 +90,12 @@ docker run --rm --env-file /path/to/.env cdzombak/mastodon-post:1 -text "message
 docker run --rm --env-file /path/to/.env ghcr.io/cdzombak/mastodon-post:1 -text "message to post"
 ```
 
+## Example Usage
+
+See:
+
+- [sirens_tweetbot](https://github.com/cdzombak/sirens_tweetbot)
+
 ## About
 
 - Issues: [github.com/cdzombak/mastodon-post/issues](https://github.com/cdzombak/mastodon-post/issues)
