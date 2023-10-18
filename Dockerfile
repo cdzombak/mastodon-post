@@ -4,13 +4,17 @@ ARG BIN_VERSION=<unknown>
 FROM golang:1 AS builder
 ARG BIN_NAME
 ARG BIN_VERSION
-WORKDIR /src/${BIN_NAME}
+
+RUN update-ca-certificates
+
+WORKDIR /src
 COPY . .
 RUN go build -ldflags="-X main.version=${BIN_VERSION}" -o ./out/${BIN_NAME} .
 
 FROM scratch
 ARG BIN_NAME
-COPY --from=builder /src/${BIN_NAME}/out/${BIN_NAME} /usr/bin/${BIN_NAME}
+COPY --from=builder /src/out/${BIN_NAME} /usr/bin/${BIN_NAME}
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ENTRYPOINT ["/usr/bin/mastodon-post"]
 
 LABEL license="MIT"
