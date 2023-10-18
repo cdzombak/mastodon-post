@@ -92,7 +92,7 @@ docker run --rm --env-file /path/to/.env ghcr.io/cdzombak/mastodon-post:1 -text 
 
 ## About
 
-- Issues: [github.com/cdzombak/mastodon-post/issues]https://github.com/cdzombak/mastodon-post/issues
+- Issues: [github.com/cdzombak/mastodon-post/issues](https://github.com/cdzombak/mastodon-post/issues)
 - Author: [Chris Dzombak](https://www.dzombak.com)
   - [GitHub: @cdzombak](https://www.github.com/cdzombak)
 
