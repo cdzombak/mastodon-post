@@ -1,0 +1,6 @@
+-s dir
+--name mastodon-post
+--description "The simplest possible CLI tool for posting to Mastodon"
+--url "https://github.com/cdzombak/mastodon-post"
+--maintainer "Chris Dzombak <https://www.dzombak.com>"
+--license MIT
