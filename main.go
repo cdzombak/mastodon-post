@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/mattn/go-mastodon"
@@ -72,6 +73,9 @@ func main() {
 	if config.Server == "" {
 		eprintf("environment variable %s is missing\n", EnvVarServer)
 		os.Exit(1)
+	}
+	if !strings.HasPrefix(strings.ToLower(config.Server), "http") {
+		config.Server = "https://" + config.Server
 	}
 	if config.ClientID == "" {
 		eprintf("environment variable %s is missing\n", EnvVarClientID)
