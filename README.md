@@ -36,9 +36,7 @@ You can optionally provide these environment variables by placing a `.env` file 
 
 If running the program via Docker, you can pass the same file to the `--env-file` option.
 
-An empty `.env` file is included in this repository to help you get started.
-
-(TODO(cdzombak): link)
+An empty `.env` file is included in this repository to help you get started: [`.env.template`](https://github.com/cdzombak/mastodon-post/blob/main/.env.template).
 
 ## Installation
 

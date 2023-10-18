@@ -36,7 +36,7 @@ func usage() {
 	eprintf("  %s\n    \tYour app's Client ID.\n", EnvVarClientID)
 	eprintf("  %s\n    \tYour app's Client Secret.\n", EnvVarClientSecret)
 	eprintf("  %s\n    \tYour Access Token.\n", EnvVarAccessToken)
-	eprintf("\nVisit TODO(cdzombak): README LINK for instructions on obtaining a Client ID, Client Secret, and Access Token.\n")
+	eprintf("\nVisit https://github.com/cdzombak/mastodon-post/blob/main/README.md#credentials-and-server-configuration for instructions on obtaining a Client ID, Client Secret, and Access Token.\n")
 	eprintf("\nVersion:\n  mastodon-post %s\n", version)
 	eprintf("\nGitHub:\n  https://github.com/cdzombak/mastodon-post\n")
 	eprintf("\nAuthor:\n  Chris Dzombak <https://www.dzombak.com>\n")
@@ -99,8 +99,8 @@ func main() {
 	result, err := c.PostStatus(context.Background(), &mastodon.Toot{
 		Status:     *text,
 		Visibility: *visibility,
-		// Sensitive:   false, // TODO(cdzombak): file an issue
-		// SpoilerText: "", // TODO(cdzombak): file an issue
+		// Sensitive:   false, // https://github.com/cdzombak/mastodon-post/issues/1
+		// SpoilerText: "", // https://github.com/cdzombak/mastodon-post/issues/1
 	})
 	if err != nil {
 		fmt.Printf("error posting status: %s\n", err)
