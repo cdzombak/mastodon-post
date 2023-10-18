@@ -36,7 +36,7 @@ func usage() {
 	eprintf("  %s\n    \tYour app's Client ID.\n", EnvVarClientID)
 	eprintf("  %s\n    \tYour app's Client Secret.\n", EnvVarClientSecret)
 	eprintf("  %s\n    \tYour Access Token.\n", EnvVarAccessToken)
-	// TODO(cdzombak): instructions on getting client ID/secret and access token
+	eprintf("\nVisit TODO(cdzombak): README LINK for instructions on obtaining a Client ID, Client Secret, and Access Token.\n")
 	eprintf("\nVersion:\n  mastodon-post %s\n", version)
 	eprintf("\nGitHub:\n  https://github.com/cdzombak/mastodon-post\n")
 	eprintf("\nAuthor:\n  Chris Dzombak <https://www.dzombak.com>\n")
