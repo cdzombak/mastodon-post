@@ -58,6 +58,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if *text == "" {
+		flag.Usage()
+		os.Exit(1)
+	}
+
 	config := mastodon.Config{
 		Server:       os.Getenv(EnvVarServer),
 		ClientID:     os.Getenv(EnvVarClientID),
