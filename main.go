@@ -45,6 +45,8 @@ func usage() {
 func main() {
 	text := flag.String("text", "", "Text to post to Mastodon")
 	visibility := flag.String("visibility", "public", "Visibility of the post (public, unlisted, private)")
+	sensitive := flag.Bool("sensitive", false, "Mark the post as sensitive content")
+	spoiler := flag.String("spoiler", "", "Spoiler text to hide the post content behind")
 	printVersion := flag.Bool("printVersion", false, "Print printVersion and exit")
 	flag.Usage = usage
 	flag.Parse()
@@ -97,10 +99,10 @@ func main() {
 	}
 
 	result, err := c.PostStatus(context.Background(), &mastodon.Toot{
-		Status:     *text,
-		Visibility: *visibility,
-		// Sensitive:   false, // https://github.com/cdzombak/mastodon-post/issues/1
-		// SpoilerText: "", // https://github.com/cdzombak/mastodon-post/issues/1
+		Status:      *text,
+		Visibility:  *visibility,
+		Sensitive:   *sensitive,
+		SpoilerText: *spoiler,
 	})
 	if err != nil {
 		fmt.Printf("error posting status: %s\n", err)
