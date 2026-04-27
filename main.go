@@ -47,7 +47,7 @@ func main() {
 	visibility := flag.String("visibility", "public", "Visibility of the post (public, unlisted, private)")
 	sensitive := flag.Bool("sensitive", false, "Mark the post as sensitive content")
 	spoiler := flag.String("spoiler", "", "Spoiler text to hide the post content behind")
-	printVersion := flag.Bool("printVersion", false, "Print printVersion and exit")
+	printVersion := flag.Bool("printVersion", false, "Print version and exit")
 	flag.Usage = usage
 	flag.Parse()
 
