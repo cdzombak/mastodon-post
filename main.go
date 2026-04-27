@@ -52,7 +52,7 @@ func main() {
 	flag.Parse()
 
 	if *printVersion {
-		fmt.Printf("%s %s", filepath.Base(os.Args[0]), version)
+		fmt.Printf("%s %s\n", filepath.Base(os.Args[0]), version)
 		os.Exit(0)
 	}
 
